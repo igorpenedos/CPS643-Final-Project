@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.cps643finalproject.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Igor Penedos\\Desktop\\School\\YEAR 3 SEM 2\\CPS 643\\CPS643-Final-Project\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "CPS643-Final-Project [Testing]"
+        }
+      }
+    }
+  ]
+}
