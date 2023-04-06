@@ -18,14 +18,53 @@ public class KartMovement : MonoBehaviour
 
     public WheelCollider RearLeftWheel;
 
-    // Update is called once per frame
+    public LeverController LeverController;
+
+    private float torque = 0.0f;
+
+    private void checkTorque()
+    {
+        if (LeverController.snapZone.name.Contains("1"))
+        {
+            torque = 400;
+        }
+        else if (LeverController.snapZone.name.Contains("2"))
+        {
+            torque = 200;
+        }
+        else if (LeverController.snapZone.name.Contains("3"))
+        {
+            torque = 100;
+        }
+        else if (LeverController.snapZone.name.Contains("4"))
+        {
+            torque = 0;
+        }
+        else if (LeverController.snapZone.name.Contains("5"))
+        {
+            torque = -200;
+        }
+    }
+
     void FixedUpdate()
     {
+        checkTorque();
+
         FrontRightWheel.steerAngle = SteeringWheel.transform.localRotation.eulerAngles.y - 90;
         FrontLeftWheel.steerAngle = SteeringWheel.transform.localRotation.eulerAngles.y - 90;
+        
+        RearRightWheel.motorTorque = torque;
+        RearLeftWheel.motorTorque = torque;
 
-        RearRightWheel.motorTorque = 100;
-        RearLeftWheel.motorTorque = 100;
+        if (torque == 0)
+        {
+            RearRightWheel.brakeTorque = 400;
+            RearLeftWheel.brakeTorque = 400;
+        } else
+        {
+            RearRightWheel.brakeTorque = 0;
+            RearLeftWheel.brakeTorque = 0;
+        }
 
         FrontRightWheelTransform.transform.localRotation = Quaternion.Euler(FrontRightWheelTransform.transform.localRotation.x, FrontRightWheel.steerAngle, 90);
         FrontLeftWheelTransform.transform.localRotation = Quaternion.Euler(FrontLeftWheelTransform.transform.localRotation.x, FrontLeftWheel.steerAngle, 90);
