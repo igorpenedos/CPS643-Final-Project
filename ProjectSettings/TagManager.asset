@@ -9,6 +9,7 @@ TagManager:
   - SteeringWheel
   - SnapZone
   - StickKnob
+  - PickUp
   layers:
   - Default
   - TransparentFX

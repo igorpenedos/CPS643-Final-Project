@@ -49,7 +49,7 @@ public class LeverInput : MonoBehaviour
         }
         else if (TriggerClick.GetStateUp(handType))
         {
-            StickKnob.transform.position = new Vector3(StickKnob.transform.position.x, StickKnob.transform.position.y, LeverControllerVars.snapZone.GetComponent<Transform>().position.z);
+            StickKnob.transform.localPosition = new Vector3(LeverControllerVars.snapZone.GetComponent<Transform>().localPosition.x, StickKnob.transform.localPosition.y, StickKnob.transform.localPosition.z);
         }
     }
 }
