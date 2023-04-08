@@ -10,6 +10,8 @@ TagManager:
   - SnapZone
   - StickKnob
   - PickUp
+  - Camera
+  - Mushroom
   layers:
   - Default
   - TransparentFX

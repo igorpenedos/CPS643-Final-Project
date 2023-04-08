@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class BaseController : MonoBehaviour
 {
@@ -9,16 +10,21 @@ public class BaseController : MonoBehaviour
 
     public GameObject Shell;
     public GameObject Mushroom;
+    public Transform PickUpSpawnPlatform;
 
     GameObject randomizeItem()
     {
         int random = Random.Range(0, 2);
-        if (random == 0)
+        if (random == 5)
         {
             return Shell;
         } else
         {
-            return Mushroom;
+            GameObject mushroom = Mushroom;
+            mushroom.GetComponent<MushroomController>().player = player;
+            mushroom.GetComponent<MushroomController>().kart = gameObject.transform.parent.GetComponent<KartMovement>();
+            mushroom.GetComponent<MushroomController>().PickUpSpawnPlatform = PickUpSpawnPlatform;
+            return mushroom;
         }
     }
 

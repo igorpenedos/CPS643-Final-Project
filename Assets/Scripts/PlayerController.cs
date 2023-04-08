@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,6 +9,10 @@ public class PlayerController : MonoBehaviour
 
     private GameObject item;
 
+    public void RemoveItem()
+    {
+        item = null;
+    }
 
     public void SetItem(GameObject newItem)
     {
@@ -18,17 +23,10 @@ public class PlayerController : MonoBehaviour
         }
 
         item = newItem;
-        Instantiate(item, PickUpSpawnPlatform);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Vector3 elevatedAmount = new Vector3(0f, 0.1f, 0f);
+        Vector3 elevatedPosition = PickUpSpawnPlatform.transform.position + elevatedAmount;
+
+        Instantiate(item, elevatedPosition, Quaternion.identity, PickUpSpawnPlatform);
     }
 }

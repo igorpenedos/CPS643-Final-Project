@@ -22,6 +22,14 @@ public class KartMovement : MonoBehaviour
 
     private float torque = 0.0f;
 
+    private bool isBoosting = false;
+    private float boostingTimer = 0f;
+
+    public void Boost()
+    {
+        isBoosting = true;
+    }
+
     private void checkTorque()
     {
         if (LeverController.snapZone.name.Contains("1"))
@@ -48,6 +56,20 @@ public class KartMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isBoosting && boostingTimer <= 3f)
+        {
+            RearRightWheel.motorTorque = 800;
+            RearLeftWheel.motorTorque = 800;
+            boostingTimer += Time.deltaTime;
+            return;
+        }
+        else
+        {
+            boostingTimer  = 0f;
+            isBoosting = false;
+        }
+
+
         checkTorque();
 
         FrontRightWheel.steerAngle = SteeringWheel.transform.localRotation.eulerAngles.y - 90;
