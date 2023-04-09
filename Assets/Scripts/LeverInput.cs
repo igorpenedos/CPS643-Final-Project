@@ -20,7 +20,7 @@ public class LeverInput : MonoBehaviour
 
     private bool isInStickKnob;
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (TriggerClick.GetState(handType) && other.gameObject.CompareTag("StickKnob"))
         {
