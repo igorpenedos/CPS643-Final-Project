@@ -12,6 +12,15 @@ public class ShellController : MonoBehaviour
     private bool exitedVehicle = false;
     private float timeToDestroy = 0f;
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Breakable"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
+    }
+
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Kart"))
