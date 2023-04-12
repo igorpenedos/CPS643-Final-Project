@@ -15,8 +15,7 @@ public class BaseController : MonoBehaviour
     GameObject randomizeItem()
     {
         int random = Random.Range(0, 2);
-        //if (random == 0)
-        if (true)
+        if (random == 0)
         {
             GameObject shell = Shell;
             shell.GetComponent<ShellController>().player = player;

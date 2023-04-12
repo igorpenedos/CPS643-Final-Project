@@ -25,12 +25,13 @@ public class KartMovement : MonoBehaviour
 
     private float torque = 0.0f;
 
-    private bool isBoosting = false;
-    private float boostingTimer = 0f;
-
     public void Boost()
     {
-        isBoosting = true;
+        RearRightWheel.motorTorque = 1600;
+        RearLeftWheel.motorTorque = 1600;
+
+        Vector3 force = new Vector3(0, 0, 10000f);
+        gameObject.GetComponent<Rigidbody>().AddRelativeForce(force, ForceMode.Impulse);
     }
 
     private void checkTorque()
@@ -59,23 +60,6 @@ public class KartMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isBoosting && boostingTimer <= 3f)
-        {
-            Debug.Log("Boost");
-            Debug.Log(RearRightWheel.motorTorque);
-            RearRightWheel.motorTorque = 1600;
-            RearLeftWheel.motorTorque = 1600;
-            Debug.Log(RearRightWheel.motorTorque);
-            boostingTimer += Time.deltaTime;
-            return;
-        }
-        else
-        {
-            boostingTimer  = 0f;
-            isBoosting = false;
-        }
-
-
         checkTorque();
 
         FrontRightWheel.steerAngle = SteeringWheel.transform.localRotation.eulerAngles.y - 90;
