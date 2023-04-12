@@ -65,6 +65,7 @@ public class ShellInput : MonoBehaviour
             {
                 Shell.parent = null;
                 Shell.GetComponent<Rigidbody>().isKinematic = false;
+                Shell.transform.rotation = ControllerPose.transform.rotation;
                 Shell.GetComponent<Rigidbody>().AddRelativeForce(0, 0, 1000f);
 
                 Shell = null;
