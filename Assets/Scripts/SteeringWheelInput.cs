@@ -39,7 +39,7 @@ public class SteeringWheelInput : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (TriggerClick.GetState(handType) && isInSteeringWheel && MushroomInput.hasMushroom() && ShellInput.hasShell())
+        if (TriggerClick.GetState(handType) && isInSteeringWheel && !MushroomInput.hasMushroom() && !ShellInput.hasShell())
         {
             Vector3 relative = SteeringWheel.transform.InverseTransformPoint(ControllerPose.transform.position);
 

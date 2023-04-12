@@ -38,7 +38,7 @@ public class MushroomInput : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (Mushroom)
+        if (other.gameObject.CompareTag("Mushroom") && Mushroom != null)
         {
             Mushroom = null;
             MushroomInfo = null;
@@ -61,6 +61,8 @@ public class MushroomInput : MonoBehaviour
             Mushroom.position = MushroomInfo.PickUpSpawnPlatform.position + new Vector3(0, 0.1f, 0);
             Mushroom.rotation = Quaternion.identity;
             Mushroom.parent = MushroomInfo.PickUpSpawnPlatform;
+            Mushroom = null;
+            MushroomInfo = null;
         }
     }
 }

@@ -43,10 +43,10 @@ public class ShellInput : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (Shell)
+        if (other.gameObject.CompareTag("Shell") && Shell != null)
         {
             Shell = null;
-            Shell = null;
+            ShellInfo = null;
         }
     }
 
@@ -68,6 +68,7 @@ public class ShellInput : MonoBehaviour
                 Shell.GetComponent<Rigidbody>().AddRelativeForce(0, 0, 1000f);
 
                 Shell = null;
+                ShellInfo = null;
                 Player.RemoveItem();
             }
         }
@@ -76,6 +77,8 @@ public class ShellInput : MonoBehaviour
             Shell.position = ShellInfo.PickUpSpawnPlatform.position + new Vector3(0, 0.1f, 0);
             Shell.rotation = Quaternion.identity;
             Shell.parent = ShellInfo.PickUpSpawnPlatform;
+            Shell = null;
+            ShellInfo = null;
         }
     }
 }

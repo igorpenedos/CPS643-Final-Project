@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ShellController : MonoBehaviour
 {
-    private bool exitedVehicle = false;
 
     public PlayerController player;
     public KartMovement kart;
     public Transform PickUpSpawnPlatform;
+
+    private bool exitedVehicle = false;
+    private float timeToDestroy = 0f;
 
     void OnTriggerExit(Collider other)
     {
@@ -18,11 +20,20 @@ public class ShellController : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (exitedVehicle)
         {
             gameObject.GetComponent<Collider>().isTrigger = false;
+
+            if (timeToDestroy >= 5.0f)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                timeToDestroy += Time.deltaTime;
+            }
         }
     }
 }
