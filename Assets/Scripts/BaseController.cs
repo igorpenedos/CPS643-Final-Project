@@ -15,9 +15,14 @@ public class BaseController : MonoBehaviour
     GameObject randomizeItem()
     {
         int random = Random.Range(0, 2);
-        if (random == 5)
+        //if (random == 0)
+        if (true)
         {
-            return Shell;
+            GameObject shell = Shell;
+            shell.GetComponent<ShellController>().player = player;
+            shell.GetComponent<ShellController>().kart = gameObject.transform.parent.GetComponent<KartMovement>();
+            shell.GetComponent<ShellController>().PickUpSpawnPlatform = PickUpSpawnPlatform;
+            return shell;
         } else
         {
             GameObject mushroom = Mushroom;

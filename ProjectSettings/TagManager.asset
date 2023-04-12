@@ -12,6 +12,8 @@ TagManager:
   - PickUp
   - Camera
   - Mushroom
+  - Kart
+  - Shell
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,9 @@ public class SteeringWheelInput : MonoBehaviour
     public Transform FrontRightWheel;
     public Transform FrontLeftWheel;
 
+    public MushroomInput MushroomInput;
+    public ShellInput ShellInput;
+
     private bool isInSteeringWheel = false;
 
     void OnTriggerStay(Collider other)
@@ -36,7 +39,7 @@ public class SteeringWheelInput : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (TriggerClick.GetState(handType) && isInSteeringWheel)
+        if (TriggerClick.GetState(handType) && isInSteeringWheel && MushroomInput.hasMushroom() && ShellInput.hasShell())
         {
             Vector3 relative = SteeringWheel.transform.InverseTransformPoint(ControllerPose.transform.position);
 

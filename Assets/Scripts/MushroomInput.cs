@@ -15,7 +15,17 @@ public class MushroomInput : MonoBehaviour
 
     private MushroomController MushroomInfo;
 
-    private 
+    public bool hasMushroom()
+    {
+        if (Mushroom != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     void OnTriggerStay(Collider other)
     {

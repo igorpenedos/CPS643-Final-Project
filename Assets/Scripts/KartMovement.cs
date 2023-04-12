@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class KartMovement : MonoBehaviour
@@ -20,6 +21,8 @@ public class KartMovement : MonoBehaviour
 
     public LeverController LeverController;
 
+    public TextMeshPro SpeedometerText;
+
     private float torque = 0.0f;
 
     private bool isBoosting = false;
@@ -34,15 +37,15 @@ public class KartMovement : MonoBehaviour
     {
         if (LeverController.snapZone.name.Contains("1"))
         {
-            torque = 400;
+            torque = 800;
         }
         else if (LeverController.snapZone.name.Contains("2"))
         {
-            torque = 200;
+            torque = 400;
         }
         else if (LeverController.snapZone.name.Contains("3"))
         {
-            torque = 100;
+            torque = 200;
         }
         else if (LeverController.snapZone.name.Contains("4"))
         {
@@ -50,7 +53,7 @@ public class KartMovement : MonoBehaviour
         }
         else if (LeverController.snapZone.name.Contains("5"))
         {
-            torque = -200;
+            torque = -400;
         }
     }
 
@@ -58,8 +61,11 @@ public class KartMovement : MonoBehaviour
     {
         if (isBoosting && boostingTimer <= 3f)
         {
-            RearRightWheel.motorTorque = 800;
-            RearLeftWheel.motorTorque = 800;
+            Debug.Log("Boost");
+            Debug.Log(RearRightWheel.motorTorque);
+            RearRightWheel.motorTorque = 1600;
+            RearLeftWheel.motorTorque = 1600;
+            Debug.Log(RearRightWheel.motorTorque);
             boostingTimer += Time.deltaTime;
             return;
         }
@@ -78,10 +84,10 @@ public class KartMovement : MonoBehaviour
         RearRightWheel.motorTorque = torque;
         RearLeftWheel.motorTorque = torque;
 
-        if (torque == 0)
+        if (LeverController.snapZone.name.Contains("4"))
         {
-            RearRightWheel.brakeTorque = 400;
-            RearLeftWheel.brakeTorque = 400;
+            RearRightWheel.brakeTorque = 800;
+            RearLeftWheel.brakeTorque = 800;
         } else
         {
             RearRightWheel.brakeTorque = 0;
@@ -90,5 +96,7 @@ public class KartMovement : MonoBehaviour
 
         FrontRightWheelTransform.transform.localRotation = Quaternion.Euler(FrontRightWheelTransform.transform.localRotation.x, FrontRightWheel.steerAngle, 90);
         FrontLeftWheelTransform.transform.localRotation = Quaternion.Euler(FrontLeftWheelTransform.transform.localRotation.x, FrontLeftWheel.steerAngle, 90);
+    
+        SpeedometerText.text = Mathf.Round(gameObject.GetComponent<Rigidbody>().velocity.magnitude) + " m/s";
     }
 }

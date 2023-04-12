@@ -27,6 +27,6 @@ public class PlayerController : MonoBehaviour
         Vector3 elevatedAmount = new Vector3(0f, 0.1f, 0f);
         Vector3 elevatedPosition = PickUpSpawnPlatform.transform.position + elevatedAmount;
 
-        Instantiate(item, elevatedPosition, Quaternion.identity, PickUpSpawnPlatform);
+        Instantiate(item, elevatedPosition, PickUpSpawnPlatform.transform.rotation, PickUpSpawnPlatform);
     }
 }

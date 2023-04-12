@@ -24,6 +24,10 @@
       "type": "boolean"
     },
     {
+      "name": "/actions/default/in/PrimaryButtonClick",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     }
@@ -96,7 +100,8 @@
       "/actions/default/in/SkeletonLeftHand": "Skeleton (Left)",
       "/actions/default/in/SkeletonRightHand": "Skeleton (Right)",
       "/actions/default/out/Haptic": "Haptic",
-      "/actions/default/in/TriggerClick": "TriggerClick"
+      "/actions/default/in/TriggerClick": "TriggerClick",
+      "/actions/default/in/PrimaryButtonClick": "PrimaryButtonClick"
     }
   ]
 }
