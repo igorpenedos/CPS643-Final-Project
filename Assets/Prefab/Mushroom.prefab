@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2095381348057683297}
   - component: {fileID: 1333691048905670030}
   - component: {fileID: 330206469303274283}
+  - component: {fileID: 4989838031111844553}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Mushroom
@@ -79,6 +80,18 @@ MonoBehaviour:
   player: {fileID: 0}
   kart: {fileID: 0}
   PickUpSpawnPlatform: {fileID: 0}
+--- !u!114 &4989838031111844553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3569526538930841859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e189ff1e0f8cb438e97d527e62458c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5145055313312346122
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,17 +8,21 @@ public class PickUpController : MonoBehaviour
 
     private bool destroyAndRespawn = false;
 
-    private Renderer rendered;
+    private new Renderer[] renderer;
 
     void Start()
     {
-        rendered = gameObject.GetComponent<Renderer>();    
+        renderer = gameObject.transform.GetComponentsInChildren<Renderer>();
     }
 
     public void DestroyAndRespawn()
     {
         destroyAndRespawn = true;
-        rendered.enabled = false;
+
+        foreach (Renderer r in renderer)
+        {
+            r.enabled = false;
+        }
     }
 
     void FixedUpdate()
@@ -33,7 +37,10 @@ public class PickUpController : MonoBehaviour
 
         if (respawnTimer >= 4f)
         {
-            rendered.enabled = true;
+            foreach (Renderer r in renderer)
+            {
+                r.enabled = true;
+            }
             respawnTimer = 0f;
         } 
         else if (respawnTimer > 0f)

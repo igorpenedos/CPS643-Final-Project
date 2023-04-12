@@ -18,15 +18,13 @@ public class PlayerController : MonoBehaviour
     {
         if (item != null)
         {
-            Destroy(item.gameObject);
+            item.GetComponent<DestroyItemController>().DestroyMe();
             item = null;
         }
-
-        item = newItem;
 
         Vector3 elevatedAmount = new Vector3(0f, 0.1f, 0f);
         Vector3 elevatedPosition = PickUpSpawnPlatform.transform.position + elevatedAmount;
 
-        Instantiate(item, elevatedPosition, PickUpSpawnPlatform.transform.rotation, PickUpSpawnPlatform);
+        item = Instantiate(newItem, elevatedPosition, PickUpSpawnPlatform.transform.rotation, PickUpSpawnPlatform);
     }
 }

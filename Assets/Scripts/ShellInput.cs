@@ -20,6 +20,8 @@ public class ShellInput : MonoBehaviour
 
     private ShellController ShellInfo;
 
+    public LeverInput LeverInput;
+
     public bool hasShell()
     {
         if (Shell != null)
@@ -57,7 +59,7 @@ public class ShellInput : MonoBehaviour
             return;
         }
 
-        if (TriggerClick.GetState(handType) & Shell)
+        if (TriggerClick.GetState(handType) && Shell && !LeverInput.currentlyOnLever())
         {
             Shell.parent = ControllerPose.transform;
 

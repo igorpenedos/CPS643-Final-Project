@@ -767,6 +767,8 @@ MonoBehaviour:
   SteeringWheel: {fileID: 5801009017001926298}
   FrontRightWheelTransform: {fileID: 4484279701857858933}
   FrontLeftWheelTransform: {fileID: 7248101653376982707}
+  RearRightWheelTransform: {fileID: 2681063358004271369}
+  RearLeftWheelTransform: {fileID: 9071284034421958753}
   FrontRightWheel: {fileID: 3470587494646056211}
   FrontLeftWheel: {fileID: 7676159461861699285}
   RearRightWheel: {fileID: 3108698403137710447}
@@ -1849,6 +1851,7 @@ MonoBehaviour:
     actionPath: /actions/default/in/PrimaryButtonClick
     needsReinit: 0
   Player: {fileID: 7108030610876132809}
+  LeverInput: {fileID: 5168721575651033769}
 --- !u!114 &4199963066367402156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1908,6 +1911,7 @@ MonoBehaviour:
   TriggerClick:
     actionPath: /actions/default/in/TriggerClick
     needsReinit: 0
+  LeverInput: {fileID: 5168721575651033769}
 --- !u!1 &4818209526504462410 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 159396, guid: 4d293c8e162f3874b982baadd71153d2,
@@ -1980,6 +1984,7 @@ MonoBehaviour:
   TriggerClick:
     actionPath: /actions/default/in/TriggerClick
     needsReinit: 0
+  LeverInput: {fileID: 2649980367894698739}
 --- !u!114 &5973146466930340681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2001,6 +2006,7 @@ MonoBehaviour:
     actionPath: /actions/default/in/PrimaryButtonClick
     needsReinit: 0
   Player: {fileID: 7108030610876132809}
+  LeverInput: {fileID: 2649980367894698739}
 --- !u!114 &8405901450034596211
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,10 @@ public class KartMovement : MonoBehaviour
 
     public Transform FrontLeftWheelTransform;
 
+    public Transform RearRightWheelTransform;
+
+    public Transform RearLeftWheelTransform;
+
     public WheelCollider FrontRightWheel;
 
     public WheelCollider FrontLeftWheel;
@@ -68,6 +72,11 @@ public class KartMovement : MonoBehaviour
         RearRightWheel.motorTorque = torque;
         RearLeftWheel.motorTorque = torque;
 
+        FrontRightWheelTransform.Rotate(0, FrontRightWheel.rpm / 60 * 360 * Time.deltaTime, 0, Space.Self);
+        FrontLeftWheelTransform.Rotate(0, FrontLeftWheel.rpm / 60 * 360 * Time.deltaTime, 0, Space.Self);
+        RearRightWheelTransform.Rotate(0, RearRightWheel.rpm / 60 * 360 * Time.deltaTime, 0, Space.Self);
+        RearLeftWheelTransform.Rotate(0, RearLeftWheel.rpm / 60 * 360 * Time.deltaTime, 0, Space.Self);
+
         if (LeverController.snapZone.name.Contains("4"))
         {
             RearRightWheel.brakeTorque = 800;
@@ -80,7 +89,7 @@ public class KartMovement : MonoBehaviour
 
         FrontRightWheelTransform.transform.localRotation = Quaternion.Euler(FrontRightWheelTransform.transform.localRotation.x, FrontRightWheel.steerAngle, 90);
         FrontLeftWheelTransform.transform.localRotation = Quaternion.Euler(FrontLeftWheelTransform.transform.localRotation.x, FrontLeftWheel.steerAngle, 90);
-    
+
         SpeedometerText.text = Mathf.Round(gameObject.GetComponent<Rigidbody>().velocity.magnitude) + " m/s";
     }
 }

@@ -15,6 +15,8 @@ public class MushroomInput : MonoBehaviour
 
     private MushroomController MushroomInfo;
 
+    public LeverInput LeverInput;
+
     public bool hasMushroom()
     {
         if (Mushroom != null)
@@ -52,7 +54,7 @@ public class MushroomInput : MonoBehaviour
             return;
         }
 
-        if (TriggerClick.GetState(handType) & Mushroom)
+        if (TriggerClick.GetState(handType) && Mushroom && !LeverInput.currentlyOnLever())
         {
             Mushroom.parent = ControllerPose.transform;
         }
