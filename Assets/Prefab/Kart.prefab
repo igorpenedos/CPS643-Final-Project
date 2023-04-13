@@ -783,7 +783,7 @@ GameObject:
   - component: {fileID: 7976309668822966878}
   - component: {fileID: 4207983442968589043}
   m_Layer: 7
-  m_Name: Sphere
+  m_Name: Minimap Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1931,7 +1931,7 @@ GameObject:
   - component: {fileID: 6529713680458785923}
   - component: {fileID: 7071854929071773060}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Minimap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
