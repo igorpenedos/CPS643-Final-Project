@@ -11,6 +11,8 @@ public class BaseController : MonoBehaviour
     public GameObject Mushroom;
     public Transform PickUpSpawnPlatform;
 
+    public EnvironmentSoundManager soundManager;
+
     GameObject randomizeItem()
     {
         int random = Random.Range(0, 2);
@@ -40,6 +42,8 @@ public class BaseController : MonoBehaviour
 
             PickUpController pickUp = other.gameObject.GetComponent<PickUpController>();
             pickUp.DestroyAndRespawn();
+
+            soundManager.playPickUp();
         }
     }
 }

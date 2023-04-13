@@ -15,6 +15,7 @@ TagManager:
   - Kart
   - Shell
   - Breakable
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

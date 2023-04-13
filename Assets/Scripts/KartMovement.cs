@@ -27,6 +27,10 @@ public class KartMovement : MonoBehaviour
 
     public TextMeshPro SpeedometerText;
 
+    public AudioSource BoostSound;
+
+    public EnvironmentSoundManager SoundManager;
+
     private float torque = 0.0f;
 
     public void Boost()
@@ -36,6 +40,8 @@ public class KartMovement : MonoBehaviour
 
         Vector3 force = new Vector3(0, 0, 10000f);
         gameObject.GetComponent<Rigidbody>().AddRelativeForce(force, ForceMode.Impulse);
+
+        BoostSound.Play();
     }
 
     public bool IsKartMoving()
@@ -72,6 +78,16 @@ public class KartMovement : MonoBehaviour
         {
             torque = -400;
         }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Shell"))
+        {
+            return;
+        }
+
+        SoundManager.playCrash();
     }
 
     void FixedUpdate()

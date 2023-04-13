@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class LeverInput : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class LeverInput : MonoBehaviour
     public Transform StickKnob;
 
     public LeverController LeverControllerVars;
+
+    public PlayerController Player;
 
     private bool isInStickKnob;
 
@@ -45,6 +48,11 @@ public class LeverInput : MonoBehaviour
     {
         if (TriggerClick.GetState(handType) & isInStickKnob)
         {
+            if (!Player.hasRaceStarted())
+            {
+                Player.startRace();
+            }
+
             Vector3 relative = Slider.transform.InverseTransformPoint(ControllerPose.transform.position);
 
             if (relative.x < 0.4 && relative.x > -0.4)

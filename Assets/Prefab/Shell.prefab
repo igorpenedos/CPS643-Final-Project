@@ -165,6 +165,7 @@ MonoBehaviour:
   player: {fileID: 0}
   kart: {fileID: 0}
   PickUpSpawnPlatform: {fileID: 0}
+  CrashSound: {fileID: 0}
 --- !u!114 &7044845441485741550
 MonoBehaviour:
   m_ObjectHideFlags: 0
