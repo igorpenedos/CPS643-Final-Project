@@ -38,6 +38,18 @@ public class KartMovement : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().AddRelativeForce(force, ForceMode.Impulse);
     }
 
+    public bool IsKartMoving()
+    {
+        if (Mathf.Round(gameObject.GetComponent<Rigidbody>().velocity.magnitude) != 0)
+        {
+            return true;
+        }
+        else
+        { 
+            return false; 
+        }
+    }
+
     private void checkTorque()
     {
         if (LeverController.snapZone.name.Contains("1"))
