@@ -21,6 +21,8 @@ public class LeverInput : MonoBehaviour
 
     public PlayerController Player;
 
+    public GameObject HowTo;
+
     private bool isInStickKnob;
 
     public bool currentlyOnLever()
@@ -51,6 +53,7 @@ public class LeverInput : MonoBehaviour
             if (!Player.hasRaceStarted())
             {
                 Player.startRace();
+                HowTo.SetActive(false);
             }
 
             Vector3 relative = Slider.transform.InverseTransformPoint(ControllerPose.transform.position);

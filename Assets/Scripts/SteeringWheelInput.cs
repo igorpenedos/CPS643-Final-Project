@@ -47,7 +47,7 @@ public class SteeringWheelInput : MonoBehaviour
 
             float futureAngle = (SteeringWheel.transform.localRotation.eulerAngles.y) + angle;
 
-            if (futureAngle > 45 & futureAngle < 135)
+            if (futureAngle > 30 & futureAngle < 150)
             {
                 SteeringWheel.transform.Rotate(0f, angle, 0f);
             }

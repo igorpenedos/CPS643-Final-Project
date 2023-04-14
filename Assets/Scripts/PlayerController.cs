@@ -8,7 +8,13 @@ public class PlayerController : MonoBehaviour
 {
     public Transform PickUpSpawnPlatform;
 
-    public TextMeshPro TimerText; 
+    public TextMeshPro TimerText;
+
+    public CheckPointController CheckPointController;
+
+    public GameObject HowTo;
+
+    public Transform Kart;
 
     private GameObject item;
 
@@ -17,6 +23,28 @@ public class PlayerController : MonoBehaviour
     private bool start = false;
 
     private bool finished = false;
+
+    public void Reset()
+    {
+        timer = 0;
+        start = false;
+        finished = false;
+        RemoveItem();
+
+        GameObject[] checkPoints = CheckPointController.getCheckPoints();
+
+        foreach (GameObject checkPoint in checkPoints)
+        {
+            checkPoint.SetActive(false);
+        }
+
+        checkPoints[0].SetActive(true);
+
+        HowTo.SetActive(true);
+
+        Kart.position = new Vector3(0, 0.15f, -2);
+        Kart.rotation = new Quaternion(0, 0, 0, 1);
+    }
 
     public bool hasRaceStarted()
     {

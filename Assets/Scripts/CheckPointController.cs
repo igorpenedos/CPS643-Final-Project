@@ -13,6 +13,11 @@ public class CheckPointController : MonoBehaviour
     private int numberOfCheckPoints;
     private int currentCheckPointCompleted = 0;
 
+    public GameObject[] getCheckPoints() 
+    {
+        return CheckPoints;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("CheckPoint"))
@@ -35,7 +40,7 @@ public class CheckPointController : MonoBehaviour
 
     void Start()
     {
-        numberOfCheckPoints = CheckPoints.Length + 1;
+        numberOfCheckPoints = CheckPoints.Length;
     }
 
     void Update()

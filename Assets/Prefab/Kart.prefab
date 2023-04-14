@@ -3123,6 +3123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PickUpSpawnPlatform: {fileID: 9046658747109804822}
   TimerText: {fileID: 2261652398589236662}
+  CheckPointController: {fileID: 7807771364180183355}
+  HowTo: {fileID: 5367438628240161355}
+  Kart: {fileID: 5801009016966750781}
 --- !u!1 &5801009017001926299
 GameObject:
   m_ObjectHideFlags: 0
@@ -4948,7 +4951,12 @@ PrefabInstance:
     - target: {fileID: 3201117656587036171, guid: 66eac79adf196684da51491ac8e388c3,
         type: 3}
       propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 1.2
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3201117656587036171, guid: 66eac79adf196684da51491ac8e388c3,
+        type: 3}
+      propertyPath: m_ForwardFriction.m_ExtremumSlip
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66eac79adf196684da51491ac8e388c3, type: 3}
@@ -5257,6 +5265,7 @@ MonoBehaviour:
   StickKnob: {fileID: 4779932639832979171}
   LeverControllerVars: {fileID: 4465934429361443127}
   Player: {fileID: 7108030610876132809}
+  HowTo: {fileID: 5367438628240161355}
 --- !u!114 &5252274423210549547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5275,6 +5284,24 @@ MonoBehaviour:
     actionPath: /actions/default/in/TriggerClick
     needsReinit: 0
   LeverInput: {fileID: 5168721575651033769}
+--- !u!114 &9199195539978572877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4818209526504231532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a4592daefff8046b25d359a7f2aec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handType: 1
+  ControllerPose: {fileID: 4848329983560596406}
+  JoyStickPress:
+    actionPath: /actions/default/in/JoyStickPress
+    needsReinit: 0
+  Player: {fileID: 7108030610876132809}
 --- !u!1 &4818209526504462410 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 159396, guid: 4d293c8e162f3874b982baadd71153d2,
@@ -5331,6 +5358,7 @@ MonoBehaviour:
   StickKnob: {fileID: 4779932639832979171}
   LeverControllerVars: {fileID: 4465934429361443127}
   Player: {fileID: 7108030610876132809}
+  HowTo: {fileID: 5367438628240161355}
 --- !u!114 &5257084543616048221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5393,6 +5421,24 @@ MonoBehaviour:
   FrontLeftWheel: {fileID: 7248101653376982707}
   MushroomInput: {fileID: 5257084543616048221}
   ShellInput: {fileID: 5973146466930340681}
+--- !u!114 &7625763353786940325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4818209526504462410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a4592daefff8046b25d359a7f2aec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handType: 2
+  ControllerPose: {fileID: 4848329984428090430}
+  JoyStickPress:
+    actionPath: /actions/default/in/JoyStickPress
+    needsReinit: 0
+  Player: {fileID: 7108030610876132809}
 --- !u!4 &4818209526504725186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 420908, guid: 4d293c8e162f3874b982baadd71153d2,
@@ -5465,6 +5511,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2374170055029516165}
     m_Modifications:
+    - target: {fileID: 330206469303274283, guid: 9b5e0ec5c59251d46a61facd7477e013,
+        type: 3}
+      propertyPath: kart
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 330206469303274283, guid: 9b5e0ec5c59251d46a61facd7477e013,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 330206469303274283, guid: 9b5e0ec5c59251d46a61facd7477e013,
+        type: 3}
+      propertyPath: PickUpSpawnPlatform
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3569526538930841859, guid: 9b5e0ec5c59251d46a61facd7477e013,
         type: 3}
       propertyPath: m_Name
@@ -5540,7 +5601,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2095381348057683297, guid: 9b5e0ec5c59251d46a61facd7477e013, type: 3}
+    - {fileID: 1333691048905670030, guid: 9b5e0ec5c59251d46a61facd7477e013, type: 3}
+    - {fileID: 330206469303274283, guid: 9b5e0ec5c59251d46a61facd7477e013, type: 3}
+    - {fileID: 4989838031111844553, guid: 9b5e0ec5c59251d46a61facd7477e013, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9b5e0ec5c59251d46a61facd7477e013, type: 3}
 --- !u!4 &3168417987063056136 stripped
 Transform:
@@ -5721,6 +5786,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2374170055029516165}
     m_Modifications:
+    - target: {fileID: 901090302395445527, guid: 2a600de1e7234a8429373cd2605930f1,
+        type: 3}
+      propertyPath: kart
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 901090302395445527, guid: 2a600de1e7234a8429373cd2605930f1,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 901090302395445527, guid: 2a600de1e7234a8429373cd2605930f1,
+        type: 3}
+      propertyPath: PickUpSpawnPlatform
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5543501895826577229, guid: 2a600de1e7234a8429373cd2605930f1,
         type: 3}
       propertyPath: m_Name
@@ -5796,7 +5876,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2288491117338161328, guid: 2a600de1e7234a8429373cd2605930f1, type: 3}
+    - {fileID: 3061759578823368773, guid: 2a600de1e7234a8429373cd2605930f1, type: 3}
+    - {fileID: 901090302395445527, guid: 2a600de1e7234a8429373cd2605930f1, type: 3}
+    - {fileID: 7044845441485741550, guid: 2a600de1e7234a8429373cd2605930f1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2a600de1e7234a8429373cd2605930f1, type: 3}
 --- !u!4 &343769324861679469 stripped
 Transform:
@@ -5870,6 +5954,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3201117656587036171, guid: 66eac79adf196684da51491ac8e388c3,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_Stiffness
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3201117656587036171, guid: 66eac79adf196684da51491ac8e388c3,
+        type: 3}
+      propertyPath: m_ForwardFriction.m_ExtremumSlip
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66eac79adf196684da51491ac8e388c3, type: 3}
