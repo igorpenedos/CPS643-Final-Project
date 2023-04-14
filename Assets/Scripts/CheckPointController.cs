@@ -13,9 +13,16 @@ public class CheckPointController : MonoBehaviour
     private int numberOfCheckPoints;
     private int currentCheckPointCompleted = 0;
 
-    public GameObject[] getCheckPoints() 
+    public void resetCheckPoints()
     {
-        return CheckPoints;
+        foreach (GameObject checkPoint in CheckPoints)
+        {
+            checkPoint.SetActive(false);
+        }
+
+        CheckPoints[0].SetActive(true);
+
+        currentCheckPointCompleted = 0;
     }
 
     private void OnTriggerEnter(Collider other)

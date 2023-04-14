@@ -31,14 +31,7 @@ public class PlayerController : MonoBehaviour
         finished = false;
         RemoveItem();
 
-        GameObject[] checkPoints = CheckPointController.getCheckPoints();
-
-        foreach (GameObject checkPoint in checkPoints)
-        {
-            checkPoint.SetActive(false);
-        }
-
-        checkPoints[0].SetActive(true);
+        CheckPointController.resetCheckPoints();
 
         HowTo.SetActive(true);
 
