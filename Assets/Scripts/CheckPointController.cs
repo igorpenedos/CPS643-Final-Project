@@ -17,7 +17,7 @@ public class CheckPointController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("CheckPoint"))
         {
-            if (currentCheckPointCompleted < numberOfCheckPoints - 1)
+            if (currentCheckPointCompleted + 1 < numberOfCheckPoints)
             {
                 CheckPoints[currentCheckPointCompleted].SetActive(false);
                 currentCheckPointCompleted++;
@@ -40,7 +40,7 @@ public class CheckPointController : MonoBehaviour
 
     void Update()
     {
-        if (numberOfCheckPoints == currentCheckPointCompleted)
+        if (numberOfCheckPoints == currentCheckPointCompleted && !Player.hasFinished())
         {
             Player.endRace();
             SoundManager.playVictory();
