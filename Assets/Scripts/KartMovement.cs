@@ -94,8 +94,8 @@ public class KartMovement : MonoBehaviour
     {
         checkTorque();
 
-        FrontRightWheel.steerAngle = (SteeringWheel.transform.localRotation.eulerAngles.y - 90) /2;
-        FrontLeftWheel.steerAngle = (SteeringWheel.transform.localRotation.eulerAngles.y - 90) /2;
+        FrontRightWheel.steerAngle = (SteeringWheel.transform.localRotation.eulerAngles.y - 90) /4;
+        FrontLeftWheel.steerAngle = (SteeringWheel.transform.localRotation.eulerAngles.y - 90) /4;
         
         RearRightWheel.motorTorque = torque;
         RearLeftWheel.motorTorque = torque;
