@@ -13,6 +13,8 @@ public class LeverInput : MonoBehaviour
 
     public SteamVR_Action_Boolean TriggerClick;
 
+    public SteamVR_Action_Vibration HapticPulse;
+
     public Transform Slider;
 
     public Transform StickKnob;
@@ -24,6 +26,14 @@ public class LeverInput : MonoBehaviour
     public GameObject HowTo;
 
     private bool isInStickKnob;
+
+    public void hapticOnController()
+    {
+        if (isInStickKnob)
+        {
+            HapticPulse.Execute(0, 0.2f, 1, 0.2f, handType);
+        }
+    }
 
     public bool currentlyOnLever()
     {

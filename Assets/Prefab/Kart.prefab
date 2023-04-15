@@ -5261,6 +5261,9 @@ MonoBehaviour:
   TriggerClick:
     actionPath: /actions/default/in/TriggerClick
     needsReinit: 0
+  HapticPulse:
+    actionPath: 
+    needsReinit: 0
   Slider: {fileID: 5723448614537696943}
   StickKnob: {fileID: 4779932639832979171}
   LeverControllerVars: {fileID: 4465934429361443127}
@@ -5354,6 +5357,9 @@ MonoBehaviour:
   TriggerClick:
     actionPath: /actions/default/in/TriggerClick
     needsReinit: 0
+  HapticPulse:
+    actionPath: 
+    needsReinit: 0
   Slider: {fileID: 5723448614537696943}
   StickKnob: {fileID: 4779932639832979171}
   LeverControllerVars: {fileID: 4465934429361443127}
@@ -5399,6 +5405,24 @@ MonoBehaviour:
     needsReinit: 0
   Player: {fileID: 7108030610876132809}
   LeverInput: {fileID: 2649980367894698739}
+--- !u!114 &7625763353786940325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4818209526504462410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a4592daefff8046b25d359a7f2aec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handType: 2
+  ControllerPose: {fileID: 4848329984428090430}
+  JoyStickPress:
+    actionPath: /actions/default/in/JoyStickPress
+    needsReinit: 0
+  Player: {fileID: 7108030610876132809}
 --- !u!114 &8405901450034596211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5421,24 +5445,6 @@ MonoBehaviour:
   FrontLeftWheel: {fileID: 7248101653376982707}
   MushroomInput: {fileID: 5257084543616048221}
   ShellInput: {fileID: 5973146466930340681}
---- !u!114 &7625763353786940325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4818209526504462410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1a4592daefff8046b25d359a7f2aec2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handType: 2
-  ControllerPose: {fileID: 4848329984428090430}
-  JoyStickPress:
-    actionPath: /actions/default/in/JoyStickPress
-    needsReinit: 0
-  Player: {fileID: 7108030610876132809}
 --- !u!4 &4818209526504725186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 420908, guid: 4d293c8e162f3874b982baadd71153d2,
@@ -6061,6 +6067,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5835716093191145566, guid: 2f5eadf26f0c7d04483f900bf78f2907,
+        type: 3}
+      propertyPath: LeftLeverInput
+      value: 
+      objectReference: {fileID: 5168721575651033769}
+    - target: {fileID: 5835716093191145566, guid: 2f5eadf26f0c7d04483f900bf78f2907,
+        type: 3}
+      propertyPath: RightLeverInput
+      value: 
+      objectReference: {fileID: 2649980367894698739}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f5eadf26f0c7d04483f900bf78f2907, type: 3}
 --- !u!114 &4465934429361443127 stripped
